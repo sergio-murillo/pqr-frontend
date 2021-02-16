@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { NgPaymentCardModule } from 'ng-payment-card';
 
 import { PageModule } from '@core/components/page/page.module';
 import { RequestState } from './store/request.state';
@@ -43,7 +42,6 @@ export const FEATURE_REDUCER_TOKEN = new InjectionToken<
     NgxDatatableModule,
     MatIconModule,
     MatSlideToggleModule,
-    NgPaymentCardModule,
     ModalModule,
     MatSnackBarModule,
     PipesModule,
