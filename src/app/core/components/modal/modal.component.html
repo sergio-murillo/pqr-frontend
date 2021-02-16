@@ -1,0 +1,21 @@
+<div [ngClass]="['wrap-modal', className]" *ngIf="showModal$" [@fadeIn]>
+  <div class="modal-container">
+    <div class="modal-body">
+      <div *ngIf="id" class="modal-background"></div>
+      <div *ngIf="id" class="modal-box">
+        <button mat-icon-button class="close-modal" [style.top]="'15px'" (click)="closeModal.emit()">
+          <mat-icon matSuffix>close</mat-icon>
+        </button>
+        <div class="header">
+          <ng-content select="[header]"></ng-content>
+        </div>
+        <div class="body">
+          <ng-content select="[body]"></ng-content>
+        </div>
+        <div class="footer" #footer>
+          <ng-content select="[footer]"></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

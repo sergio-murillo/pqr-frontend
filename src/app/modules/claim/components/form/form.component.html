@@ -1,0 +1,32 @@
+<form class="form" [formGroup]="formGroup">
+  <div class="row">
+    <div class="col-25">
+      <label for="title">{{'CLAIM.TITLE.LABEL' | translate}}</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="title" name="title" formControlName="title" [placeholder]="'CLAIM.TITLE.PLACEHOLDER' | translate">
+      <span *ngIf="errorInput('title')" class="error">{{'RESPONSES.REQUIRED' | translate}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="description">{{'CLAIM.DESCRIPTION.LABEL' | translate}}</label>
+    </div>
+    <div class="col-75">
+      <textarea id="description" name="description" formControlName="description" [placeholder]="'CLAIM.DESCRIPTION.PLACEHOLDER' | translate"></textarea>
+      <span *ngIf="errorInput('description')" class="error">{{'RESPONSES.REQUIRED' | translate}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="request">{{'CLAIM.REQUEST_ID.LABEL' | translate}}</label>
+    </div>
+    <div class="col-75">
+      <app-autocomplete id="request" containerId="request" [formGroup]="formGroup" [placeholder]="'CLAIM.REQUEST_ID.PLACEHOLDER' | translate" [items]="requestItems"></app-autocomplete>
+      <span *ngIf="errorInput('request')" class="error">{{'RESPONSES.REQUIRED' | translate}}</span>
+    </div>
+  </div>
+  <div class="form__actions">
+    <button type="button" class="btn btn-success" (click)="saveClaim()">{{'CLAIM.BUTTON.SAVE' | translate}}</button>
+  </div>
+</form>

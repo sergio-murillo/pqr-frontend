@@ -1,0 +1,101 @@
+{
+  "CLAIM": {
+    "MAIN": "No. Radicado",
+    "TITLE": {
+      "LABEL": "Título",
+      "PLACEHOLDER": "Escribe el título aquí"
+    },
+    "DESCRIPTION": {
+      "LABEL": "Descripción",
+      "PLACEHOLDER": "Escribe la descripción aquí"
+    },
+    "CLIENT_ID": {
+      "LABEL": "ID de cliente",
+      "PLACEHOLDER": "Escribe el No. de identificación del cliente aquí"
+    },
+    "REQUEST_ID": {
+      "LABEL": "Rad. de P/Q",
+      "PLACEHOLDER": "Escribe el No. Radicado de la Petición/Queja aquí"
+    },
+    "CREATION_DATE": {
+      "LABEL": "Fecha de solicitud"
+    },
+    "CUSTOMER": {
+      "LABEL": "Cliente"
+    },
+    "REQUEST": {
+      "LABEL": "Petición / Queja"
+    },
+    "ANSWER": {
+      "LABEL": "Respuesta"
+    },
+    "BUTTON": {
+      "SAVE": "Guardar"
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "No. Radicado, estado o Id de cliente"
+    },
+    "ID": {
+      "LABEL": "No. Radicado"
+    },
+    "STATE": {
+      "LABEL": "Estado"
+    },
+    "OPERATIONS": "Operaciones"
+  },
+  "RESPONSES": {
+    "REQUIRED": "El campo es obligatorio"
+  },
+  "COMMONS": {
+    "REQUEST": "Petición",
+    "COMPLAINT": "Queja",
+    "CLAIM": "Reclamo",
+    "STATES": {
+      "CREATED": "Creado",
+      "IN_PROCESS": "En Proceso",
+      "CLOSED": "Cerrada"
+    },
+    "TYPES": {
+      "REQUEST": "Petición",
+      "COMPLAINT": "Queja"
+    }
+  },
+  "REQUEST": {
+    "MAIN": "No. Radicado",
+    "TITLE": {
+      "LABEL": "Título",
+      "PLACEHOLDER": "Escribe el título aquí"
+    },
+    "DESCRIPTION": {
+      "LABEL": "Descripción",
+      "PLACEHOLDER": "Escribe la descripción aquí"
+    },
+    "CLIENT_ID": {
+      "LABEL": "ID de cliente",
+      "PLACEHOLDER": "Escribe el No. de identificación del cliente aquí"
+    },
+    "CUSTOMER": {
+      "LABEL": "Cliente"
+    },
+    "CREATION_DATE": {
+      "LABEL": "Fecha de solicitud"
+    },
+    "ANSWER": {
+      "LABEL": "Respuesta"
+    },
+    "STATE": {
+      "LABEL": "Estado"
+    },
+    "TYPE": {
+      "LABEL": "Tipo",
+      "PLACEHOLDER": "Seleccione el tipo de solicitud"
+    },
+    "ID": {
+      "LABEL": "No. Radicado"
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "No. Radicado, estado o Id de cliente"
+    },
+    "OPERATIONS": "Operaciones"
+  }
+}

@@ -1,0 +1,13 @@
+<div class="autocomplete" [formGroup]="formGroup">
+  <input
+    type="text"
+    [id]="id"
+    [formControlName]="id"
+    [placeholder]="placeholder"
+    [value]="itemSelected?.name">
+  <ul #result *ngIf="activateOptions">
+    <li [id]="itemId" #item *ngFor="let item of itemsFiltered" [class.active]="itemActived?.code === item.code" (click)="selectItem(item)">
+      <span [class]="textClass" [id]="itemTextId">{{item.name}}</span>
+    </li>
+  </ul>
+</div>

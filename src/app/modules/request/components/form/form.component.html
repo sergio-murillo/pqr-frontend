@@ -1,0 +1,45 @@
+<form class="form" [formGroup]="formGroup">
+  <div class="row">
+    <div class="col-25">
+      <label for="title">{{'REQUEST.TITLE.LABEL' | translate}}</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="title" name="title" formControlName="title" [placeholder]="'REQUEST.TITLE.PLACEHOLDER' | translate">
+      <span *ngIf="errorInput('title')" class="error">{{'RESPONSES.REQUIRED' | translate}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="description">{{'REQUEST.DESCRIPTION.LABEL' | translate}}</label>
+    </div>
+    <div class="col-75">
+      <textarea id="description" name="description" formControlName="description" [placeholder]="'REQUEST.DESCRIPTION.PLACEHOLDER' | translate"></textarea>
+      <span *ngIf="errorInput('description')" class="error">{{'RESPONSES.REQUIRED' | translate}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="customer">{{'REQUEST.CLIENT_ID.LABEL' | translate}}</label>
+    </div>
+    <div class="col-75">
+      <app-autocomplete id="customer" containerId="customer" [formGroup]="formGroup" [placeholder]="'REQUEST.CLIENT_ID.PLACEHOLDER' | translate" [items]="customersItems"></app-autocomplete>
+      <span *ngIf="errorInput('customer')" class="error">{{'RESPONSES.REQUIRED' | translate}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="title">{{'REQUEST.TYPE.LABEL' | translate}}</label>
+    </div>
+    <div class="col-75">
+      <select id="type" name="type" formControlName="type">
+        <option value="" selected>{{'REQUEST.TYPE.PLACEHOLDER' | translate}}</option>
+        <option value="P">{{'COMMONS.TYPES.REQUEST' | translate}}</option>
+        <option value="Q">{{'COMMONS.TYPES.COMPLAINT' | translate}}</option>
+      </select>
+      <span *ngIf="errorInput('type')" class="error">{{'RESPONSES.REQUIRED' | translate}}</span>
+    </div>
+  </div>
+  <div class="form__actions">
+    <button type="button" class="btn btn-success" (click)="saveClaim()">{{'CLAIM.BUTTON.SAVE' | translate}}</button>
+  </div>
+</form>

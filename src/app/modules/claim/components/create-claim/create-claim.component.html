@@ -1,0 +1,5 @@
+<div class="create-claim">
+  <div class="create-claim__form">
+    <app-form [requestItems]="requestsAutocomplete$ | async" (save)="saveClaim($event)"></app-form>
+  </div>
+</div>

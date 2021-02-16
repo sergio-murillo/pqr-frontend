@@ -1,0 +1,5 @@
+<div class="create-request">
+  <div class="create-request__form">
+    <app-form [customersItems]="customersAutocomplete$ | async" (save)="saveRequest($event)"></app-form>
+  </div>
+</div>

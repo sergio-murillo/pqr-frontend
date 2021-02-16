@@ -1,0 +1,24 @@
+@import 'variables'
+
+=flex($alignItems: stretch, $justifyContent: flex-start, $direction: row)
+  display: flex
+  align-items: $alignItems
+  justify-content: $justifyContent
+  flex-direction: $direction
+
+@mixin breakpoint($size)
+  $breakpoint-value: map-get($breakpoints, $size)
+  @media screen and(min-width: $breakpoint-value)
+    @content
+
+=scroll($border-radius-track, $background-track, $width-bar, $border-radius-thumb, $background-thumb, $height-tumb)
+  &::-webkit-scrollbar-track
+    border-radius: $border-radius-track
+    background-color: $background-track
+  &::-webkit-scrollbar
+    width: $width-bar
+  &::-webkit-scrollbar-thumb
+    border-radius: $border-radius-thumb
+    background-color: $background-thumb
+    height: $height-tumb
+    -webkit-overflow-scrolling: touch

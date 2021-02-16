@@ -1,0 +1,50 @@
+<div class="search-requests" [formGroup]="formGroup">
+  <div class="search-requests-search">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" [placeholder]="'REQUEST.SEARCH.PLACEHOLDER' | translate" aria-label="Tipo, número o nombre de quien pertenece" aria-describedby="basic-addon2" formControlName="search">
+      <div class="input-group-append">
+        <button class="btn btn-success" type="button" (click)="search()">Buscar</button>
+      </div>
+    </div>
+  </div>
+  <div class="search-requests-table">
+    <ngx-datatable
+      class="material"
+      columnMode="flex"
+      rowHeight="auto"
+      [rows]="requests$ | async"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [loadingIndicator]="isLoadingRequests$ | async">
+      <ngx-datatable-column prop="id" name="{{ 'REQUEST.ID.LABEL' | translate | uppercase }}" [flexGrow]="2">
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="title" name="{{ 'REQUEST.TITLE.LABEL' | translate | uppercase }}" [flexGrow]="1">
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="description" name="{{ 'REQUEST.DESCRIPTION.LABEL' | translate | uppercase }}" [flexGrow]="2">
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="creation_date" name="{{ 'REQUEST.CREATION_DATE.LABEL' | translate | uppercase }}" [flexGrow]="1.2">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          {{ value | date:'dd/MM/yyyy' }}
+      </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="customer" name="{{ 'REQUEST.CUSTOMER.LABEL' | translate | uppercase }}" [flexGrow]="2">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          {{ value | formatCustomer }}
+      </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column prop="type" name="{{ 'REQUEST.TYPE.LABEL' | translate | uppercase }}" [flexGrow]="2">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          {{ value | requestType }}
+      </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="{{ 'REQUEST.OPERATIONS' | translate | uppercase }}" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          <button mat-icon-button (click)="viewRequest(row?.id)">
+            <mat-icon matSuffix>remove_red_eye</mat-icon>
+          </button>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</div>
+
