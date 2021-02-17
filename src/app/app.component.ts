@@ -6,11 +6,10 @@ import {
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import { ServiceWorkerService } from './core/services/service-worker.service';
 import { RootFacade } from './core/store/root.facade';
-import { IWebStorageService } from './core/entities/browser.entities';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private translateService: TranslateService,
     public router: Router,
     private sw: ServiceWorkerService,
+    private rootFacade: RootFacade,
   ) {
     this.translateService.setDefaultLang(this.defaultLang);
     this.translateService.use(this.defaultLang);
@@ -40,5 +40,9 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach((sub) => {
       sub.unsubscribe();
     });
+  }
+
+  get isLoading$(): Observable<boolean> {
+    return this.rootFacade.isLoading$;
   }
 }
