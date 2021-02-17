@@ -8,7 +8,7 @@
       </li>
       <li class="list-group-item">
         <label class="view-claim__title">{{'CLAIM.DESCRIPTION.LABEL' | translate}}</label>
-        <label class="view-claim__value">{{claim?.title}}</label>
+        <label class="view-claim__value">{{claim?.description}}</label>
       </li>
       <li class="list-group-item">
         <label class="view-claim__title">{{'CLAIM.CREATION_DATE.LABEL' | translate}}</label>
@@ -28,31 +28,31 @@
       </li>
       <li class="list-group-item">
         <div class="card">
-          <h4 class="card-header">{{'CLAIM.MAIN' | translate}} {{claim?.request.id}}</h4>
+          <h4 class="card-header">{{claim?.request?.type | requestType}} | {{'CLAIM.MAIN' | translate}} {{claim?.request?.id}}</h4>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <label class="view-claim__title">{{'REQUEST.TITLE.LABEL' | translate}}</label>
-              <label class="view-claim__value">{{claim?.request.title}}</label>
+              <label class="view-claim__value">{{claim?.request?.title}}</label>
             </li>
             <li class="list-group-item">
               <label class="view-claim__title">{{'REQUEST.DESCRIPTION.LABEL' | translate}}</label>
-              <label class="view-claim__value">{{claim?.request.description}}</label>
+              <label class="view-claim__value">{{claim?.request?.description}}</label>
             </li>
             <li class="list-group-item">
               <label class="view-claim__title">{{'REQUEST.CREATION_DATE.LABEL' | translate}}</label>
-              <label class="view-claim__value">{{claim?.request.creation_date}}</label>
+              <label class="view-claim__value">{{claim?.request?.creation_date}}</label>
             </li>
             <li class="list-group-item">
               <label class="view-claim__title">{{'REQUEST.ANSWER.LABEL' | translate}}</label>
-              <label class="view-claim__value">{{claim?.request.answer}}</label>
+              <label class="view-claim__value">{{claim?.request?.answer}}</label>
             </li>
             <li class="list-group-item">
               <label class="view-claim__title">{{'REQUEST.STATE.LABEL' | translate}}</label>
-              <label class="view-claim__value">{{claim?.request.state | state | translate}}</label>
+              <label class="view-claim__value">{{claim?.request?.state | state | translate}}</label>
             </li>
             <li class="list-group-item">
               <label class="view-claim__title">{{'REQUEST.TYPE.LABEL' | translate}}</label>
-              <label class="view-claim__value">{{claim?.request.type | requestType }}</label>
+              <label class="view-claim__value">{{claim?.request?.type | requestType }}</label>
             </li>
           </ul>
         </div>

@@ -86,6 +86,7 @@ export class AutocompleteComponent implements OnInit, OnDestroy {
 
   public selectItem(item: AutoCompleteItem): void {
     if (!!item) {
+      this.formGroup.get(this.id).setValue(item.name);
       this.itemSelected = item;
       this.isOpen = false;
       this.isItemSelected = true;

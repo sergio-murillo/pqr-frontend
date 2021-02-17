@@ -46,9 +46,9 @@ export class CreateRequestComponent implements OnInit {
       filter((data) => !!data && !!data.response),
       map((data) =>
         data.response.map((item) => ({
-          code: item.id,
-          name: `${item.id}`,
-          filter: item.id,
+          code: item.identification_number,
+          name: `${item.identification_number}`,
+          filter: item.identification_number,
         })),
       ),
     );

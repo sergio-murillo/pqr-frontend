@@ -59,7 +59,7 @@ export class ClaimEffects {
             });
           }),
           catchError(({ error }) => {
-            this.snackBar.open('Ocurrio un error en la transacción', null, {
+            this.snackBar.open('Ocurrio un error en la transacción.', null, {
               duration: 3000,
             });
             return of({ error });
