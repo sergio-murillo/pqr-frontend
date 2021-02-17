@@ -18,7 +18,7 @@
         <label class="view-claim__title">{{'CLAIM.CUSTOMER.LABEL' | translate}}</label>
         <label class="view-claim__value">{{claim?.customer | formatCustomer}}</label>
       </li>
-      <li class="list-group-item">
+      <li class="list-group-item" *ngIf="claim?.answer">
         <label class="view-claim__title">{{'CLAIM.ANSWER.LABEL' | translate}}</label>
         <label class="view-claim__value">{{claim?.answer}}</label>
       </li>
@@ -42,7 +42,7 @@
               <label class="view-claim__title">{{'REQUEST.CREATION_DATE.LABEL' | translate}}</label>
               <label class="view-claim__value">{{claim?.request?.creation_date}}</label>
             </li>
-            <li class="list-group-item">
+            <li class="list-group-item" *ngIf="claim?.request?.answer">
               <label class="view-claim__title">{{'REQUEST.ANSWER.LABEL' | translate}}</label>
               <label class="view-claim__value">{{claim?.request?.answer}}</label>
             </li>

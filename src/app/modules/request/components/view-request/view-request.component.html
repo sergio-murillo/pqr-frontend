@@ -18,7 +18,7 @@
         <label class="view-request__title">{{'REQUEST.CUSTOMER.LABEL' | translate}}</label>
         <label class="view-request__value">{{request?.customer | formatCustomer}}</label>
       </li>
-      <li class="list-group-item">
+      <li class="list-group-item" *ngIf="request?.answer">
         <label class="view-request__title">{{'REQUEST.ANSWER.LABEL' | translate}}</label>
         <label class="view-request__value">{{request?.answer}}</label>
       </li>
